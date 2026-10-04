@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jaz"
+version = "0.1.0"
+description = "A Minimalist Agent Framework With Maximal Expressivity"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.25.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+jaz = "jaz.cli:main"

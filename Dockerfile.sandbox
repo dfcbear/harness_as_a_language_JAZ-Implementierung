@@ -1,0 +1,13 @@
+FROM python:3.11-slim
+
+# Avoid writing .pyc files and enable unbuffered output
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /workspace
+
+# Install minimal base packages if needed
+RUN pip install --no-cache-dir httpx rich
+
+# Default command to start the JAZ RPC worker loop
+CMD ["python", "-u", "-m", "jaz.repl.rpc"]

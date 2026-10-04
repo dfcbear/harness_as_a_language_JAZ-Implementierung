@@ -1,0 +1,24 @@
+# JAZ Central Configuration
+# Copy this file to `jaz.toml` in your working directory or project root.
+
+[llm]
+# OpenAI-compatible API endpoint (vLLM, Ollama, LM Studio, or cloud)
+base_url = "${JAZ_BASE_URL:-http://localhost:8000/v1}"
+model = "${JAZ_MODEL:-default}"
+api_key = "${JAZ_API_KEY:-EMPTY}"
+context_window = 32768
+temperature = 0.0
+timeout = 180.0                  # Request timeout in seconds
+price_per_1k_input = 0.0         # Price per 1,000 input tokens (0.0 for local/free models)
+price_per_1k_output = 0.0        # Price per 1,000 output tokens (0.0 for local/free models)
+
+[repl]
+# Sandbox execution mode:
+# - "direct": Executed in the same Python process (fastest, full local machine access)
+# - "subprocess": Executed in a child process with filtered environment and workspace jail
+# - "container": Executed in a container (requires Podman Desktop or Docker)
+sandbox = "direct"
+
+# Container settings (only used if sandbox = "container")
+container_runtime = "podman"    # "podman" or "docker"
+container_image = "python:3.11-slim"
