@@ -122,6 +122,12 @@ For a comprehensive guide on sandbox modes, security, self-hosted LLM configurat
 
 ---
 
+## ToDo
+
+Implement robust sandboxing.
+
+---
+
 ## Citation & Acknowledgments
 
 This framework is based on the paradigm introduced by the MIT CSAIL team. If you use JAZ in your research or applications, please cite the original authors:
