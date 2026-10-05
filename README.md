@@ -8,6 +8,22 @@ A minimalist, highly expressive LLM agent framework implementing the `invoke` pr
 
 ---
 
+## Video Demonstration
+
+Watch JAZ autonomously generating, testing, and self-repairing Python tools in real time:
+
+https://github.com/dfcbear/harness_as_a_language_JAZ-Implementierung/raw/main/media/jaz_demonstration_en.mp4
+
+[![JAZ Video Demonstration](media/video_preview_life.png)](https://github.com/dfcbear/harness_as_a_language_JAZ-Implementierung/raw/main/media/jaz_demonstration_en.mp4)
+
+*Video Highlights (Full HD 1080p, 02:20 min):*
+- **Autonomous Tool Synthesis & REPL Self-Repair**: Real 4-turn REPL trace generating an expert Sudoku generator & solver (`sudoku.py`, 393 lines). JAZ receives a traceback when a roundtrip test fails in turn 2, investigates the root cause, and autonomously fixes the test logic in turn 3.
+- **`--linter` Architecture Deep Dive**: Pre-execution AST verification hook (`PythonLinterHook`) that analyzes code via `ast.parse()`, cleans formatting/markdown preambles, and protects the persistent REPL against state corruption.
+- **Authentic Execution & Dynamic Simulation (`life.py`)**: Real execution trace creating Conway's Game of Life under active AST linter protection (8/8 unit tests pass in 33.7s), followed by dynamic terminal simulation of the period-3 Pulsar oscillator.
+- Direct file: [`media/jaz_demonstration_en.mp4`](media/jaz_demonstration_en.mp4)
+
+---
+
 ## Key Characteristics
 
 1. **`invoke(**inputs)` as a Language Primitive**:  
